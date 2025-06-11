@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RODNOY AGRO PVT LTD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Poppins:700,400|Orbitron:700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+      background: linear-gradient(135deg, #f6fff8 0%, #b2ff59 100%);
+      color: #1a2c1d;
+    }
+    header {
+      background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+      color: #fff;
+      padding: 1.1rem 1rem 0.6rem 1rem;
+      text-align: center;
+      font-family: 'Orbitron', 'Poppins', cursive;
+      font-size: 2.3rem;
+      letter-spacing: 2px;
+      box-shadow: 0 2px 12px #009efd44;
+      text-shadow: 2px 3px 12px #2af59877;
+      position: relative;
+    }
+    .company-name {
+      font-weight: bold;
+      color: #ffea00;
+      font-family: 'Orbitron', 'Poppins', cursive;
+      letter-spacing: 2.5px;
+      background: linear-gradient(90deg, #ff1744 0%, #43e97b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      display: inline-block;
+      font-size: 2.5rem;
+    }
+    .auth-btns {
+      position: absolute;
+      top: 12px; right: 18px;
+      display: flex; gap: 1rem;
+    }
+    .auth-btns button {
+      background: #fff;
+      border: none;
+      color: #009efd;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1.01rem;
+      padding: 0.5em 1.2em;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 1px 6px #009efd33;
+      transition: background 0.2s, color 0.2s;
+    }
+    .auth-btns button:hover {
+      background: #2af598;
+      color: #fff;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 0.9rem;
+      margin-top: 0.2rem;
+    }
+    nav a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1.13rem;
+      letter-spacing: 1.2px;
+      transition: color 0.2s;
+      padding: 0.5rem 1.3rem;
+      border-radius: 9px;
+      font-family: 'Montserrat', sans-serif;
+    }
+    nav a:hover, nav a.active {
+      background: #b2ff59;
+      color: #222;
+    }
+    #special-offer-bar {
+      background: linear-gradient(90deg, #ffea00 0%, #ff1744 100%);
+      color: #fff;
+      font-family: 'Poppins',sans-serif;
+      font-size: 1.19rem;
+      font-weight: bold;
+      padding: 0.6em 0;
+      text-shadow: 0 1px 8px #2af59888;
+      overflow: hidden;
+      position:relative;
+      margin-bottom: 0.7em;
+    }
+    #special-offer-marquee {
+      white-space:nowrap;
+      display:inline-block;
+      transition: none;
+      will-change: transform;
+    }
+    /* Shop photos scroll */
+    .shop-photos-scroll-wrap {
+      margin: 1.5em auto 1.5em auto;
+      max-width: 700px;
+      overflow: hidden;
+      border-radius: 18px;
+      box-shadow: 0 1px 16px #009efd28;
+      background: #f0fbfa;
+      padding: 0.5em 0;
+    }
+    .shop-photos-scroll {
+      display: flex;
+      gap: 1.1em;
+      align-items: center;
+      animation: shopscroll 16s linear infinite;
+    }
+    @keyframes shopscroll {
+      0% {transform: translateX(0);}
+      100% {transform: translateX(-50%);}
+    }
+    .shop-photos-scroll img {
+      width: 210px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #009efd25;
+      border: 2px solid #b2ff59;
+      background: #fff;
+      transition: transform .2s;
+    }
+    .shop-photos-scroll img:hover {
+      transform: scale(1.09);
+      border: 2px solid #ff1744;
+    }
+    .prof-contact,
+    .user-contact {
+      text-align: center;
+      margin: 1.5em auto 1.5em auto;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.06rem;
+      color: #009efd;
+      background: #f0fbfa;
+      border-radius: 12px;
+      max-width: 600px;
+      padding: 1em 0.8em;
+      box-shadow: 0 1px 12px #2af59822;
+    }
+    .prof-contact b, .user-contact b {
+      color: #ff1744;
+    }
+    /* Category & Product Cards */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.2rem;
+      justify-content: center;
+      margin: 2.3rem auto 2.3rem auto;
+      max-width: 1200px;
+    }
+    .card {
+      background: linear-gradient(120deg, #e0f5fa 70%, #b2ff59 100%);
+      border-radius: 16px;
+      box-shadow: 0 3px 18px #009efd22;
+      padding: 1.3rem 1.1rem 1.3rem 1.1rem;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: 2px solid #2af59822;
+      position: relative;
+      cursor: pointer;
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .card:hover {
+      transform: translateY(-7px) scale(1.04);
+      box-shadow: 0 10px 32px #009efd44;
+      border: 2px solid #009efd66;
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 13px;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 2px 10px #2af59833;
+      background: #fff;
+    }
+    .card-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.23rem;
+      color: #222;
+      font-weight: 700;
+      margin-bottom: 0.37rem;
+      letter-spacing: 1.2px;
+    }
+    .card-price {
+      font-family: 'Montserrat', sans-serif;
+      color: #009efd;
+      font-size: 1.11rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .card-desc {
+      font-size: 0.99rem;
+      color: #265;
+      min-height: 30px;
+      margin-bottom: 0.4rem;
+    }
+    .card .buy-btn {
+      margin-top: auto;
+      background: linear-gradient(90deg, #009efd 0%, #2af598 100%);
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      box-shadow: 0 2px 10px #b2ff5940;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.18s;
+    }
+    .card .buy-btn:hover {
+      background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+      box-shadow: 0 6px 20px #2af59844;
+    }
+    .discount-badge {
+      position: absolute;
+      left: -9px; top: -8px;
+      background: #ff1744;
+      color: #fff;
+      font-size: 1.01rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 10px 0 12px 0;
+      box-shadow: 0 4px 14px #ff174455;
+      letter-spacing: 1px;
+    }
+    /* Buy page */
+    .buy-content {
+      margin: 2.3rem auto;
+      max-width: 400px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px #009efd22;
+      padding: 2.1rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .buy-content img {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px #2af59833;
+      background: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .buy-product-title {
+      font-size: 1.5rem;
+      color: #009efd;
+      font-family: 'Poppins', cursive;
+      margin-bottom: 0.7rem;
+      margin-top: 0;
+    }
+    .buy-old-price {
+      text-decoration: line-through;
+      color: #e74c3c;
+      margin-right: 1rem;
+      font-size: 1.13rem;
+    }
+    .buy-discount {
+      color: #27ae60;
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .buy-form {
+      margin-top: 1.5em;
+      text-align: left;
+    }
+    .buy-form label {
+      display:block;
+      color: #009efd;
+      margin-bottom: .2em;
+      font-size: 1.06em;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .buy-form input, .buy-form textarea {
+      width: 100%;
+      padding: 0.7em;
+      margin-bottom: 1em;
+      border-radius: 7px;
+      border: 1.3px solid #b2ff59;
+      font-size: 1em;
+      font-family: inherit;
+    }
+    .buy-form button {
+      width: 100%;
+      background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 7px;
+      font-size: 1.08rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      box-shadow: 0 2px 8px #b2ff5950;
+      cursor: pointer;
+    }
+    .buy-form button:hover {
+      background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+    }
+    .buy-success-message {
+      color: #27ae60;
+      font-weight: bold;
+      font-family: 'Montserrat',sans-serif;
+      margin-top: 1em;
+      text-align:center;
+      font-size: 1.11em;
+    }
+    /* Auth Popup */
+    .auth-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(30,30,40,0.66);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .auth-popup.active {
+      display: flex;
+    }
+    .auth-form {
+      width: 340px;
+      background: #fff;
+      padding: 2.1rem 1.6rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #009efd44;
+      text-align: center;
+      position: relative;
+      animation: popup 0.25s cubic-bezier(.8,1.5,.5,1.1);
+    }
+    @keyframes popup {
+      from {transform: scale(0.8);}
+      to {transform: scale(1);}
+    }
+    .auth-form h3 {
+      font-family: 'Montserrat', cursive;
+      color: #009efd;
+      margin-bottom: 1.5rem;
+    }
+    .auth-form input {
+      width: 90%;
+      padding: 0.7rem;
+      margin-bottom: 1.3rem;
+      border: 1px solid #b2ff59;
+      border-radius: 7px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .auth-form button {
+      width: 100%;
+      background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      box-shadow: 0 2px 8px #b2ff5950;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .auth-form .close-btn {
+      position: absolute;
+      right: 14px; top: 10px;
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      color: #009efd;
+      cursor: pointer;
+    }
+    /* Contact Us / Queries */
+    .contact-section {
+      margin: 3.5rem auto 2rem auto;
+      background: linear-gradient(90deg, #2af59811 0%, #009efd11 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #b2ff5940;
+      padding: 2.1rem 1rem 2.5rem 1rem;
+      max-width: 680px;
+    }
+    .contact-section h2 {
+      color: #ff1744;
+      font-size: 1.8rem;
+      margin-bottom: 1.1rem;
+      text-align: center;
+      font-family: 'Orbitron', cursive;
+      text-shadow: 0 1px 7px #009efd33;
+      letter-spacing: 2px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 90%;
+      max-width: 400px;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1.8px solid #009efd88;
+      font-size: 1.09rem;
+      font-family: 'Montserrat', sans-serif;
+      outline: none;
+      background: #f6fff8;
+      transition: border 0.2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      border: 1.8px solid #2af598;
+      background: #fff;
+    }
+    .contact-form button {
+      width: 160px;
+      padding: 0.85rem 0;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(90deg, #ff1744 0%, #43e97b 100%);
+      color: #fff;
+      font-size: 1.12rem;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      box-shadow: 0 2px 10px #b2ff5940;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.18s;
+    }
+    .contact-form button:hover {
+      background: linear-gradient(90deg, #43e97b 0%, #ff1744 100%);
+      box-shadow: 0 6px 20px #2af59844;
+    }
+    .footer-address {
+      background: linear-gradient(90deg, #f5f8ff 0%, #e0f5fa 100%);
+      border-top: 4px solid #ff1744;
+      box-shadow: 0 -1px 12px #009efd13;
+      padding: 1.3em 0.7em 1.3em 0.7em;
+      margin: 2.5em 0 0 0;
+      max-width: 100vw;
+      border-radius: 0;
+      color: #222;
+      font-size: 1.12rem;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      text-align:center;
+    }
+    .created-by {
+      text-align: center;
+      color: #888;
+      font-family: 'Montserrat',sans-serif;
+      font-size: 1.01em;
+      margin: 2em 0 1em 0;
+    }
+    .created-by b {
+      color: #009efd;
+      font-family: 'Orbitron',cursive;
+    }
+    @media (max-width: 900px) {
+      .card-grid {gap: 1.2rem;}
+      .card, .product-card {width: 45vw; min-width: 155px;}
+      .buy-content {padding: 1.2rem 0.4rem;}
+      .shop-photos-scroll img {width: 46vw;}
+    }
+    @media (max-width: 700px) {
+      header {font-size: 1.1rem;}
+      .card-grid {gap: 0.6rem;}
+      .card {width: 86vw;}
+      .buy-content {width: 96vw;}
+      .address-box {padding: 1em;}
+      .contact-section {padding: 1.3rem 0.1rem;}
+      .prof-contact {padding: 0.6em;}
+      .shop-photos-scroll {gap: 0.7em;}
+      .shop-photos-scroll img {height: 90px;}
+      .footer-address {font-size: 0.99em;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="company-name">RODNOY AGRO PVT LTD</span>
+    <div class="auth-btns">
+      <button id="show-login">Login</button>
+      <button id="show-signup">Sign Up</button>
+    </div>
+    <nav>
+      <a href="#" class="nav-home">Home</a>
+      <a href="#contact-section">Contact/Queries</a>
+    </nav>
+  </header>
+  <!-- Special Offer Marquee (Scrolls 4 Times) -->
+  <div id="special-offer-bar">
+    <div id="special-offer-marquee">
+      <span style="margin-right:4em;">🌟 Special Offer: Get 20% OFF on all products! Limited Time Only! 🌟</span>
+      <span style="margin-right:4em;">🌟 Special Offer: Get 20% OFF on all products! Limited Time Only! 🌟</span>
+      <span style="margin-right:4em;">🌟 Special Offer: Get 20% OFF on all products! Limited Time Only! 🌟</span>
+      <span>🌟 Special Offer: Get 20% OFF on all products! Limited Time Only! 🌟</span>
+    </div>
+  </div>
+  <div class="prof-contact">
+    <b>Prof. Aamir Abass</b> &mdash; WhatsApp: <a href="https://wa.me/99999999" style="color:#009efd;text-decoration:underline;">99999999</a>
+  </div>
+  <div class="user-contact">
+    <b>Mobile:</b> 9999999 &nbsp; | &nbsp; <b>Email:</b> <a href="mailto:aaamir@gmail.com" style="color:#009efd;text-decoration:underline;">aaamir@gmail.com</a>
+  </div>
+  <!-- Shop Photos Scroll -->
+  <div class="shop-photos-scroll-wrap">
+    <div class="shop-photos-scroll" id="shop-photos-scroll">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 1">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 2">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 3">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 4">
+      <!-- Repeat for smooth scroll -->
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 1">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 2">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 3">
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Shop Photo 4">
+    </div>
+  </div>
+  <!-- Main App Container -->
+  <div id="app"></div>
+  <!-- Contact Us / Queries -->
+  <div class="contact-section" id="contact-section">
+    <h2>Contact Us / Queries</h2>
+    <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you for contacting us! We will get in touch soon.');this.reset();">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="text" name="phone" placeholder="Your Phone Number" required>
+      <textarea name="message" rows="4" placeholder="Your Message or Query" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  <!-- Auth Popups -->
+  <div class="auth-popup" id="login-popup">
+    <form class="auth-form" autocomplete="off" onsubmit="event.preventDefault();alert('Login successful (demo only)!');closeAuthForms();">
+      <button class="close-btn" type="button" onclick="closeAuthForms()">&times;</button>
+      <h3>Login</h3>
+      <input type="email" placeholder="Email address" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div class="auth-popup" id="signup-popup">
+    <form class="auth-form" autocomplete="off" onsubmit="event.preventDefault();alert('Signup successful (demo only)!');closeAuthForms();">
+      <button class="close-btn" type="button" onclick="closeAuthForms()">&times;</button>
+      <h3>Sign Up</h3>
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email address" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+  <div class="created-by">Website created by <b>Aadil Rasheed</b></div>
+  <!-- Address in Footer -->
+  <div class="footer-address">
+    <b>RODNOY AGRO PVT LTD</b> <br>
+    Mohammadpora, Kulgam 191123, Jammu & Kashmir, India
+  </div>
+  <script>
+    // Special Offer Marquee Scroll
+    (function() {
+      const marquee = document.getElementById('special-offer-marquee');
+      let position = 0;
+      function animateMarquee() {
+        position -= 2;
+        if (Math.abs(position) > marquee.scrollWidth / 4) {
+          position = 0;
+        }
+        marquee.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(animateMarquee);
+      }
+      animateMarquee();
+    })();
+
+    // --- Product Data ---
+    const categories = [
+      {
+        id: "insecticide",
+        name: "Insecticide",
+        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80",
+        desc: "Protect crops from harmful insects.",
+        products: [
+          {id:"allka", name:"Allka", img:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80", price:560, desc:"Powerful insecticide for crop protection."},
+          {id:"applecare", name:"Applecare", img:"https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80", price:630, desc:"Special care for apple orchards."}
+        ]
+      },
+      {
+        id: "pesticides",
+        name: "Pesticides",
+        img: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=300&q=80",
+        desc: "Defend fields from pests and diseases.",
+        products: [
+          {id:"fruitcare", name:"Fruit Care", img:"https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=300&q=80", price:490, desc:"All-round fruit protection formula."},
+          {id:"kavach", name:"Kavach", img:"https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80", price:550, desc:"Broad spectrum fungicide."},
+          {id:"mancozb", name:"Mancozb", img:"https://images.unsplash.com/photo-1439122955806-6c6a0def994e?auto=format&fit=crop&w=300&q=80", price:510, desc:"Multi-action fungicide for vegetables."},
+          {id:"dodine", name:"Dodine", img:"https://images.unsplash.com/photo-1468421870903-4df1664ac249?auto=format&fit=crop&w=300&q=80", price:590, desc:"Effective fruit disease controller."},
+          {id:"ziram", name:"Ziram", img:"https://images.unsplash.com/photo-1542831371-d531d36971e6?auto=format&fit=crop&w=300&q=80", price:450, desc:"Zinc-rich fungicide for healthy crops."},
+          {id:"propinep", name:"Propinep", img:"https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80", price:470, desc:"Advanced fungicide for cereals."},
+          {id:"qualposhe", name:"Qualposhe", img:"https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=300&q=80", price:650, desc:"High efficacy pest repellent."}
+        ]
+      },
+      {
+        id: "npk",
+        name: "NPK",
+        img: "https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=300&q=80",
+        desc: "Balanced nutrients for healthy crops.",
+        products: [
+          {id:"npk19", name:"NPK 19-19-11", img:"https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=300&q=80", price:570, desc:"Balanced NPK fertilizer for crops."},
+          {id:"npk11", name:"NPK 11-44-11", img:"https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=300&q=80", price:590, desc:"Phosphorus-rich fertilizer blend."},
+          {id:"npk20", name:"NPK 20-11-20", img:"https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80", price:620, desc:"High potassium NPK formula."}
+        ]
+      },
+      {
+        id: "fertilizers",
+        name: "Fertilizers",
+        img: "https://images.unsplash.com/photo-1465101178521-c1a9136a3e92?auto=format&fit=crop&w=300&q=80",
+        desc: "Boost yield with quality fertilizers.",
+        products: [
+          {id:"dalab", name:"Dala Baharat", img:"https://images.unsplash.com/photo-1465101178521-c1a9136a3e92?auto=format&fit=crop&w=300&q=80", price:320, desc:"Popular fertilizer for Kashmir soils."},
+          {id:"urea", name:"Urea", img:"https://images.unsplash.com/photo-1524594154908-eddc8e3737e4?auto=format&fit=crop&w=300&q=80", price:280, desc:"Essential nitrogen fertilizer."},
+          {id:"potash", name:"Potash", img:"https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=300&q=80", price:330, desc:"Vital for plant health and growth."},
+          {id:"calculum", name:"Calculum", img:"https://images.unsplash.com/photo-1441115630814-2c31be1d5c6b?auto=format&fit=crop&w=300&q=80", price:390, desc:"Premium calcium for soil enrichment."}
+        ]
+      }
+    ];
+    function showPage(page, options={}) {
+      document.title = "RODNOY AGRO PVT LTD";
+      let container = document.getElementById("app");
+      container.innerHTML = "";
+      if(page === "home") {
+        container.innerHTML = `
+          <div style="max-width:1100px;margin:2.2rem auto 0 auto;">
+            <h2 style="font-family:'Poppins',cursive;color:#009efd;font-size:2rem;text-shadow:0 2px 8px #b2ff5922;margin-bottom:1.6rem;">Product Categories</h2>
+            <div class="card-grid" id="cat-grid"></div>
+          </div>
+        `;
+        let grid = container.querySelector("#cat-grid");
+        categories.forEach(cat => {
+          let div = document.createElement("div");
+          div.className = "card";
+          div.innerHTML = `
+            <img src="${cat.img}" alt="${cat.name}">
+            <div class="card-title">${cat.name}</div>
+            <div class="card-desc">${cat.desc}</div>
+          `;
+          div.onclick = ()=>showPage("category", {catId:cat.id});
+          grid.appendChild(div);
+        });
+      }
+      if(page === "category") {
+        let cat = categories.find(c=>c.id===options.catId);
+        if(!cat) { showPage("home"); return; }
+        document.title = cat.name + " - RODNOY AGRO";
+        container.innerHTML = `
+          <div style="max-width:1100px;margin:2.2rem auto 0 auto;">
+            <button onclick="showPage('home')" style="background:#b2ff59;color:#006; border:none;padding:0.7em 1.3em; font-family:'Montserrat',sans-serif; font-weight:bold; border-radius:8px;box-shadow:0 1px 6px #009efd22;cursor:pointer;margin-bottom:1.1rem;">← Back</button>
+            <h2 style="font-family:'Poppins',cursive;color:#009efd;font-size:2rem;text-shadow:0 2px 8px #b2ff5922;margin-bottom:1.6rem;">${cat.name}</h2>
+            <div class="card-grid" id="prod-grid"></div>
+          </div>
+        `;
+        let grid = container.querySelector("#prod-grid");
+        cat.products.forEach(prod=>{
+          let div = document.createElement("div");
+          div.className = "card";
+          div.innerHTML = `
+            <img src="${prod.img}" alt="${prod.name}">
+            <div class="card-title">${prod.name}</div>
+            <div class="card-price">₹ ${prod.price}</div>
+            <div class="card-desc">${prod.desc}</div>
+            <span class="discount-badge">20% OFF</span>
+            <button class="buy-btn">Buy</button>
+          `;
+          div.querySelector(".buy-btn").onclick = (e)=>{
+            e.stopPropagation();
+            showPage("buy", {catId:cat.id, prodId:prod.id});
+          };
+          grid.appendChild(div);
+        });
+      }
+      if(page === "buy") {
+        let cat = categories.find(c=>c.id===options.catId);
+        if(!cat) { showPage("home"); return; }
+        let prod = cat.products.find(p=>p.id===options.prodId);
+        if(!prod) { showPage("category",{catId:cat.id}); return;}
+        let discount = Math.round(prod.price*0.2);
+        let finalPrice = prod.price - discount;
+        document.title = `Buy ${prod.name} - RODNOY AGRO`;
+        container.innerHTML = `
+          <div class="buy-content">
+            <button onclick="showPage('category',{catId:'${cat.id}'})" style="background:#b2ff59;color:#006; border:none;padding:0.5em 1.1em; font-family:'Montserrat',sans-serif; font-weight:bold; border-radius:8px;box-shadow:0 1px 6px #009efd22;cursor:pointer;position:absolute;left:10px;top:10px;">← Back</button>
+            <img src="${prod.img}" alt="${prod.name}">
+            <h2 class="buy-product-title">${prod.name}</h2>
+            <div class="buy-old-price">₹ ${prod.price}</div>
+            <div class="buy-discount">Now ₹ ${finalPrice} <span style="background:#ff1744;color:#fff;padding:2px 10px;border-radius:7px;font-size:0.99rem;margin-left:0.6em;">20% OFF</span></div>
+            <div class="card-desc" style="margin-bottom:1.2rem;">${prod.desc}</div>
+            <form class="buy-form" id="buy-form">
+              <label>Quantity (in KG or Units):</label>
+              <input type="number" name="qty" min="1" required>
+              <label>Delivery Address:</label>
+              <textarea name="address" rows="2" required></textarea>
+              <label>Phone No:</label>
+              <input type="text" name="phone" pattern="[0-9]{7,15}" required>
+              <label>PIN Code:</label>
+              <input type="text" name="pin" pattern="[0-9]{4,10}" required>
+              <label>Gmail ID:</label>
+              <input type="email" name="gmail" placeholder="your@gmail.com" required>
+              <button type="submit">Place Order</button>
+            </form>
+            <div class="buy-success-message" id="buy-success-message" style="display:none;">
+              Thank you for purchasing from us! You are being redirected to our order form...
+            </div>
+          </div>
+        `;
+        document.getElementById('buy-form').onsubmit = function(e){
+          e.preventDefault();
+          document.getElementById('buy-success-message').style.display = 'block';
+          // Example Google Form redirection link (replace with your real Google Form link if available)
+          setTimeout(() => {
+            window.open('https://forms.gle/KY8x2u1nRZK2x4vY7', '_blank');
+          }, 1500);
+          this.reset();
+        }
+      }
+    }
+    showPage("home");
+    document.querySelector(".nav-home").onclick = function(e){ e.preventDefault(); showPage("home"); };
+    function closeAuthForms(){
+      document.getElementById('signup-popup').classList.remove('active');
+      document.getElementById('login-popup').classList.remove('active');
+    }
+    document.getElementById('show-signup').onclick = function(){closeAuthForms();document.getElementById('signup-popup').classList.add('active');};
+    document.getElementById('show-login').onclick = function(){closeAuthForms();document.getElementById('login-popup').classList.add('active');};
+    document.getElementById('signup-popup').onclick = function(e){if(e.target===this)closeAuthForms();}
+    document.getElementById('login-popup').onclick = function(e){if(e.target===this)closeAuthForms();}
+    window.showPage = showPage;
+  </script>
+</body>
+</html>
